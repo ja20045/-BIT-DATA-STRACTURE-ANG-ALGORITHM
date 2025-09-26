@@ -1,0 +1,65 @@
+import array
+
+# Integers: Grant amounts in USD
+grant_amounts = [500, 750, 300, 1000, 650, 400]
+total_grants = sum(grant_amounts)
+average_grant = total_grants / len(grant_amounts)
+min_grant = min(grant_amounts)
+max_grant = max(grant_amounts)
+
+# Strings: Formatted report
+report = (
+    f"Micro-grant Disbursement Report\n"
+    f"Total Grants Disbursed: ${total_grants}\n"
+    f"Average Grant Amount: ${average_grant:.2f}\n"
+    f"Minimum Grant: ${min_grant}, Maximum Grant: ${max_grant}\n"
+)
+print(report)
+
+# Booleans: Threshold check
+threshold = 600
+status = "Above Standard" if average_grant > threshold and max_grant > 900 else "Below Standard"
+print(f"Status: {status}\n")
+
+# Lists: Beneficiary names
+beneficiaries = ["Alice", "Bob", "Charlie", "Diana", "Ethan"]
+print("Original Beneficiaries:", beneficiaries)
+
+# Add new beneficiary
+beneficiaries.append("Fatima")
+
+# Remove one based on condition (e.g., name starts with 'C')
+beneficiaries = [name for name in beneficiaries if not name.startswith("C")]
+
+# Sort and display
+beneficiaries.sort()
+print("Updated Beneficiaries:", beneficiaries, "\n")
+
+# Arrays: Fixed-size subset of grant amounts
+grant_array = array.array('i', grant_amounts[:5])  # First 5 grants
+array_sum = sum(grant_array)
+list_sum = sum(grant_amounts[:5])
+print(f"Sum from array: ${array_sum}, Sum from list: ${list_sum}\n")
+
+# Dictionaries: Grant records
+grant_records = [
+    {"id": 1, "name": "Alice", "value": 500},
+    {"id": 2, "name": "Bob", "value": 750},
+    {"id": 3, "name": "Charlie", "value": 300},
+    {"id": 4, "name": "Diana", "value": 1000},
+]
+
+# Update Charlie's grant
+for record in grant_records:
+    if record["name"] == "Charlie":
+        record["value"] = 350
+
+# Delete Bob's record
+grant_records = [record for record in grant_records if record["name"] != "Bob"]
+
+# Compute total value
+total_value = sum(record["value"] for record in grant_records)
+print("Updated Grant Records:")
+for record in grant_records:
+    print(record)
+print(f"Total Value of Grants: ${total_value}")
