@@ -1,0 +1,26 @@
+# Stack simulation for UR notes
+stack = []
+
+# Push operations
+stack.append("NoteA")
+stack.append("NoteB")
+stack.append("NoteC")
+
+# Pop two items
+stack.pop()  # Removes "NoteC"
+stack.pop()  # Removes "NoteB"
+
+# Final stack state
+print("Remaining item:", stack)# Stack simulation for Irembo actions
+stack = []
+
+# Push operations
+stack.append("Fill Form")
+stack.append("Upload Photo")
+stack.append("Confirm")
+
+# Undo last action (pop)
+stack.pop()  # Removes "Confirm"
+
+# Final stack state
+print("Remaining actions:", stack)
